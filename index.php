@@ -157,6 +157,16 @@
 			}
 		),
 		array(
+			'text' => 'Remove zero-width spaces',
+			'function' => function($input) {
+				$input = str_replace("&#8203;", "", $input); // remove html entities
+				$input = str_replace("&#x200b;", "", $input);
+				$input = preg_replace("/&[zZ]ero[wW]idth[sS]pace;/", "", $input);
+				$input = str_replace("\xE2\x80\x8B", "", $input); // remove unencoded
+				return $input;
+			}
+		),
+		array(
 			'text' => 'SHA1',
 			'function' => function($input) {
 				return hash('sha1', $input);
