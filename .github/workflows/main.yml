@@ -1,0 +1,24 @@
+name: Deploy Repo Data
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Run rsync
+      uses: burnett01/rsync-deployments@master
+      with:
+        switches: -rltgoDzvO --filter="dir-merge,- .gitignore" --delete-after --progress ./ ./
+        path: ./
+        remote_path: /var/www/virtual/oelna2/convert.arnorichter.de
+        remote_host: crommelin.uberspace.de
+        remote_port: 22
+        remote_user: ${{ secrets.SSH_USER }}
+        remote_key: ${{ secrets.SSH_KEY }}
