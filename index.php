@@ -1,4 +1,13 @@
 <?php
+	/*
+	
+	MIT License
+
+	Copyright (c) 2022- Arno Richter
+	https://arnorichter.de
+	
+	*/
+
 	//check for PHP version requirements
 	if(version_compare(phpversion(), '5.3.0', '<')) die('This requires at least PHP 5.3 to run.');
 	date_default_timezone_set('Europe/Berlin');
