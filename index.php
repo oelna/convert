@@ -197,9 +197,11 @@
 	<meta charset="utf-8" />
 	<title>Converter</title>
 
-	<meta name="author" content="Arno Richter">
+	<link rel="copyright" href="./LICENCE" />
+	<meta name="author" content="Arno Richter" />
 	<meta name="description" content="Convert between various string encodings (UTF-8, Base64, JSON or Quoted-Printable) and clean up text." />
-
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 	<style>
 		* { box-sizing: border-box; }
